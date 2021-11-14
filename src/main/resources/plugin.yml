@@ -1,0 +1,9 @@
+name: BetterMSG
+version: '${version}'
+main: me.fonz.BetterMSG
+api-version: 1.17
+commands:
+  msg:
+    aliases: [w, tell]
+  reply:
+    aliases: r
