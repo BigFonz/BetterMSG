@@ -44,12 +44,6 @@ public final class BetterMSG extends JavaPlugin {
                 replaceAll("%sender%", sender.getName()).
                 replaceAll("%message%", message);
 
-        /* OPTION 1
-        sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&6To &7" + target.getName() + "&f: " + message));
-        target.sendMessage(ChatColor.translateAlternateColorCodes('&', "&6From &7" + sender.getName() + "&f: " + message));
-        */
-
-        // OPTION 2
         target.sendMessage(ChatColor.translateAlternateColorCodes('&', targetFormat));
         sender.sendMessage(ChatColor.translateAlternateColorCodes('&', senderFormat));
 

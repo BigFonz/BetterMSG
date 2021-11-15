@@ -21,7 +21,6 @@ public class ReplyCommand implements CommandExecutor {
         }
 
         Player lastMessagedPlayer = plugin.getLastMessaged((Player) sender);
-
         if (lastMessagedPlayer == null) {
             sender.sendMessage(ChatColor.RED + "No player has recently messaged you!");
             return true;
