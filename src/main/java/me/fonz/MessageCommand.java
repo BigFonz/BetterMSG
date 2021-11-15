@@ -18,7 +18,6 @@ public class MessageCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-
         if (args.length < 2) {
             sender.sendMessage(ChatColor.RED + "You need to specify a player and message! /msg <player> <message>");
             return true;

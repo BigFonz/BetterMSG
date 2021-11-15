@@ -17,8 +17,12 @@ public final class BetterMSG extends JavaPlugin {
     //---------TARGET-SENDER-------------
     private Map<UUID, UUID> lastMessaged;
 
+    private String targetFormat;
+    private String senderFormat;
+
     @Override
     public void onEnable() {
+        saveDefaultConfig();
         lastMessaged = new HashMap<>();
 
         getCommand("msg").setExecutor(new MessageCommand(this));
@@ -27,9 +31,18 @@ public final class BetterMSG extends JavaPlugin {
 
     public void sendMessage(Player target, CommandSender sender, String[] messageArgs) {
         String message = "";
+
         for (String word : messageArgs) {
             message += word + " ";
         }
+
+        targetFormat = getConfig().getString("target").replaceAll("%target%", target.getName()).
+                replaceAll("%sender%", sender.getName()).
+                replaceAll("%message%", message);
+
+        senderFormat = getConfig().getString("sender").replaceAll("%target%", target.getName()).
+                replaceAll("%sender%", sender.getName()).
+                replaceAll("%message%", message);
 
         /* OPTION 1
         sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&6To &7" + target.getName() + "&f: " + message));
@@ -37,8 +50,8 @@ public final class BetterMSG extends JavaPlugin {
         */
 
         // OPTION 2
-        sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&6To " + target.getName() + "&f: " + message));
-        target.sendMessage(ChatColor.translateAlternateColorCodes('&', "&6From " + sender.getName() + "&f: " + message));
+        target.sendMessage(ChatColor.translateAlternateColorCodes('&', targetFormat));
+        sender.sendMessage(ChatColor.translateAlternateColorCodes('&', senderFormat));
 
         target.playSound(target.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 1f, 1f);
         setLastMessaged(target.getUniqueId(), sender instanceof Player ? ((Player) sender).getUniqueId() : null);

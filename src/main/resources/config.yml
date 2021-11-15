@@ -1,0 +1,7 @@
+# Formats for the messages
+# Placeholders:
+# - %target% - player receiving the message
+# - %sender% - player sending the message
+# - %message% - the message being sent
+target: '&6From &7%sender%&f: %message%'
+sender: '&6To &7%target%&f: %message%'
