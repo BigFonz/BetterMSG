@@ -1,9 +1,12 @@
-name: BetterMSG
+name: BetterChat
 version: '${version}'
-main: me.fonz.BetterMSG
+main: me.fonz.BetterChat
 api-version: 1.17
 commands:
   msg:
-    aliases: [w, tell]
+    aliases: [w, tell, whisper]
   reply:
     aliases: r
+  ignore:
+    aliases: block
+  ignorelist:

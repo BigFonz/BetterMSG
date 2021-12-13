@@ -1,5 +1,7 @@
-package me.fonz;
+package me.fonz.command;
 
+import me.fonz.BetterChat;
+import me.fonz.Config;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -10,14 +12,14 @@ import org.bukkit.entity.Player;
 import java.util.Arrays;
 
 public class MessageCommand implements CommandExecutor {
-    private BetterMSG plugin;
-
-    public MessageCommand(BetterMSG plugin) {
-        this.plugin = plugin;
-    }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if (!(sender instanceof Player)) {
+            sender.sendMessage(ChatColor.RED + "This command is only available for players!33333");
+            return true;
+        }
+
         if (args.length < 2) {
             sender.sendMessage(ChatColor.RED + "You need to specify a player and message! /msg <player> <message>");
             return true;
@@ -29,7 +31,7 @@ public class MessageCommand implements CommandExecutor {
             return true;
         }
 
-        plugin.sendMessage(target, sender, Arrays.copyOfRange(args, 1, args.length));
+        BetterChat.getInstance().getMessageManager().sendPrivateMessage(target, (Player) sender, Arrays.copyOfRange(args, 1, args.length));
         return true;
     }
 
