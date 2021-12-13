@@ -1,5 +1,5 @@
 # BetterChat
-A simple spigot messaging plugin to replace vanilla chat and messaging. If you find any bugs or shenanigans create an issue [here](https://github.com/BigFonz/BetterMSG/issues)
+A simple spigot messaging to replace vanilla chat and messaging. If you find any bugs or shenanigans create an issue [here](https://github.com/BigFonz/BetterMSG/issues)
 
 ## **Installation**
 Head to the [releases page](https://github.com/BigFonz/BetterMSG/releases) and download the latest release. Then put the jar in your server's ```plugins``` folder
