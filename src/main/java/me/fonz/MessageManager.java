@@ -7,10 +7,10 @@ import org.bukkit.entity.Player;
 import java.util.*;
 
 public class MessageManager {
-    //--------------TARGET-SENDER-------------
+    //---------TARGET-SENDER-------------
     private Map<UUID, UUID> lastMessaged;
 
-    //--------------IGNORED----IGNORING
+    //---------IGNORED----IGNORING
     private Map<UUID, List<UUID>> ignores;
 
     public MessageManager() {
