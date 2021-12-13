@@ -8,4 +8,4 @@ Head to the [releases page](https://github.com/BigFonz/BetterMSG/releases) and d
 `/msg <player> <message>` - messages a player\
 `/reply <message>` - sends a message to the most recent player\
 `/ignore <player>` - ignores a specific player's chat messages \
-`/ignorelist` - displays all currently ignored players\
+`/ignorelist` - displays all currently ignored players
